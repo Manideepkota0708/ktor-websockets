@@ -39,12 +39,12 @@ fun main() {
                         launch {
                             val receivedText = frame.readText()
                             val textWithUserName = "[${connection.name}]: $receivedText"
-                            delay(10000)
+//                            delay(10000)
                             println("$textWithUserName -> ${Thread.currentThread()}")
                             connectionsSet.forEach {
                                 launch {
                                     println("sending to others $textWithUserName, ${Thread.currentThread()}")
-                                    delay(10000)
+//                                    delay(10000)
                                     it.session.send(textWithUserName)
                                 }
                             }
